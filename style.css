@@ -44,11 +44,11 @@ ins {
     max-width: 600px;
 }
 .menu .b {
-    color: white;
-    font-family: "press start 2p", sans-serif;
+    color: rgb(162, 218, 255);
+    font-family: fantasy;
     font-size: 8vw;
     text-align: center;
-    text-shadow: 0 0 5vh #e74c3c, 0 0 10vh #e74c3c;
+    text-shadow: 0 0 5vh #583add, 0 0 10vh #e74c3c;
     transition: transform 0.3s;
     cursor: pointer;
 }
@@ -57,7 +57,7 @@ ins {
     transition: transform 0.3s;
 }
 .menu .ob{
-    color: white;
+    color: rgb(252, 227, 0);
     font-family: "press start 2p", sans-serif;
     font-size: 2vw;
     width: 100%;
@@ -148,17 +148,26 @@ ins {
     border-radius: 10vh;
     z-index: 0;
 }
+.rock4{
+    position: absolute;
+    background-image: url(8.gif);
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    border-radius: 10vh;
+    z-index: 0;
+}
 .p{
     position: absolute;
     background-image: url(1.gif);
-    width: 15vmin;
-    height: 15vmin;
+    width: 150px;
+    height: 150px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 150px 150px;
     perspective: 500px;
-    left: 50%;
-    bottom: 2vh;
-    transform: translateX(-50%);
+    left: 48%;
+    bottom: 0vh;
     z-index: 1;
 }
 .p:after {
@@ -193,7 +202,7 @@ ins {
 .star{
     height: 6px;
     width: 6px;
-    background-color: rgb(221, 255, 143);
+    background-color: rgb(251, 255, 0);
     position: absolute;
     border-radius: 90%;
 }
@@ -228,7 +237,7 @@ ins {
 }
 .hb .h {
     position: absolute;
-    background-color: red;
+    background-color: rgb(23, 199, 38);
     height: 100%;
     max-width: 100%;
     top: 0;
@@ -242,8 +251,8 @@ ins {
 }
 .s{
     position: absolute;
-    bottom: 1vh;
-    left: 1vh;
+    top: 1vh;
+    right: 1vh;
     padding: 2vh;
     color: white;
     font-family: "press start 2p";
@@ -258,6 +267,7 @@ ins {
         font-size: 3vw;
     }
 }
+
 @keyframes shield{
     0%{
         filter: contrast(200%);

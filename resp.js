@@ -22,15 +22,12 @@ function handleTouchMove(evt) {
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
         if (xDiff > 0) {
-            // Left swipe
             moveCraft('left');
         } else {
-            // Right swipe
             moveCraft('right');
         }
     } else {
         if (yDiff > 0) {
-            // Up swipe
             firePly();
         }
     }
@@ -52,7 +49,6 @@ function moveCraft(direction) {
     }
 }
 
-// Modify mousemove event for better touch compatibility
 $(document).on('mousemove touchmove', function(e) {
     if (gameState) {
         let pageX = e.type === 'touchmove' ? e.originalEvent.touches[0].pageX : e.pageX;
@@ -62,7 +58,6 @@ $(document).on('mousemove touchmove', function(e) {
     }
 });
 
-// Use both click and touch events for firing
 $(document).on('click touchstart', function(e) {
     if (gameState) {
         firePly();
@@ -88,6 +83,7 @@ pre = () => {
   $(".bgm").prop("volume", 0.15);
   $(".wow").prop("volume", 0.6);
   $(".good").prop("volume", 0.3);
+  $(".thehell").prop("volume", 0.15);
   loadAstStar();
 };
 
@@ -101,12 +97,12 @@ init = () => {
   gameRunner();
   ai();
   quests = [
-  ["Eliminate 100 catz,", 100, false],
-  ["Eliminate 200 catz, for a Whiskaz!", 200, false],
-  ["Eliminate 300 catz,", 300, false],
-  ["Eliminate 400 catz,", 400, false],
-  ["Eliminate 500 catz, for a Reward.", 500, false],
-  ["Eliminate 1000 catz, for a Whiskaz!", 1000, false]];
+  ["Mission 1: Feed 100 catz", 100, false],
+  ["Mission 2: Feed 200 catz, for a Whiskaz!", 200, false],
+  ["Mission 3: Feed 300 catz", 300, false],
+  ["Mission 4: Feed 400 catz", 400, false],
+  ["Mission 5: Feed 500 catz, for a Reward.", 500, false],
+  ["Final Mission: Feed 1000 catz, for a Whiskaz!", 1000, false]];
 
   questing();
 };
@@ -200,7 +196,6 @@ $(document).mousemove(e => {
   if (gameState == true) {
     ply.css({
       left: e.pageX - ply.width() / 2 });
-
   }
 });
 
@@ -241,6 +236,9 @@ loadAstStar = () => {
   $(".rock3").each(function (i) {
     asteroids.push($(this));
   });
+  $(".rock4").each(function (i) {
+    asteroids.push($(this));
+  });
   $(".star").each(function (i) {
     stars.push($(this));
     sizes.push(Math.random());
@@ -249,7 +247,6 @@ loadAstStar = () => {
   posAstStar(asteroids, true);
   posAstStar(stars, false);
   init();
-  //console.log(asteroids)
 };
 
 posAstStar = (o, ig) => {
