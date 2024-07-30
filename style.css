@@ -90,8 +90,8 @@ ins {
     top: 1vh;
     left: 1vh;
     z-index: 1;
-    width: 60vh;
-    text-align: center;
+    width: auto;
+    text-align: left;
 }
 .q .qo {
     color: white;
