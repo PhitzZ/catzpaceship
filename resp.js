@@ -1,3 +1,77 @@
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+
+let xDown = null;
+let yDown = null;
+
+function handleTouchStart(evt) {
+    xDown = evt.touches[0].clientX;
+    yDown = evt.touches[0].clientY;
+}
+
+function handleTouchMove(evt) {
+    if (!xDown || !yDown) {
+        return;
+    }
+
+    let xUp = evt.touches[0].clientX;
+    let yUp = evt.touches[0].clientY;
+
+    let xDiff = xDown - xUp;
+    let yDiff = yDown - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (xDiff > 0) {
+            // Left swipe
+            moveCraft('left');
+        } else {
+            // Right swipe
+            moveCraft('right');
+        }
+    } else {
+        if (yDiff > 0) {
+            // Up swipe
+            firePly();
+        }
+    }
+
+    xDown = null;
+    yDown = null;
+}
+
+function moveCraft(direction) {
+    if (gameState) {
+        let currentLeft = parseInt(ply.css('left'));
+        let moveAmount = 20;
+        
+        if (direction === 'left') {
+            ply.css('left', Math.max(0, currentLeft - moveAmount));
+        } else {
+            ply.css('left', Math.min(dW - ply.width(), currentLeft + moveAmount));
+        }
+    }
+}
+
+// Modify mousemove event for better touch compatibility
+$(document).on('mousemove touchmove', function(e) {
+    if (gameState) {
+        let pageX = e.type === 'touchmove' ? e.originalEvent.touches[0].pageX : e.pageX;
+        ply.css({
+            left: Math.min(Math.max(pageX - ply.width() / 2, 0), dW - ply.width())
+        });
+    }
+});
+
+// Use both click and touch events for firing
+$(document).on('click touchstart', function(e) {
+    if (gameState) {
+        firePly();
+        e.preventDefault();
+    }
+});
+
+
+
 ply = $(".p");
 over = $(".o");
 
