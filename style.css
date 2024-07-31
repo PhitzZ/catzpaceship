@@ -70,7 +70,7 @@ ins {
     height: 40vmin;
     border-radius: 50%;
     box-shadow: 0 0 10px white;
-    background-image: url(5.png);
+    background-image: url(images/5.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -110,7 +110,7 @@ ins {
 }
 .rock{
     position: absolute;
-    background-image: url(2.gif);
+    background-image: url(images/2.gif);
     width: 150px;
     height: 150px;
     background-repeat: no-repeat;
@@ -120,7 +120,7 @@ ins {
 }
 .rock1{
     position: absolute;
-    background-image: url(3.gif);
+    background-image: url(images/3.gif);
     width: 150px;
     height: 150px;
     background-repeat: no-repeat;
@@ -130,7 +130,7 @@ ins {
 }
 .rock2{
     position: absolute;
-    background-image: url(4.gif);
+    background-image: url(images/4.gif);
     width: 150px;
     height: 150px;
     background-repeat: no-repeat;
@@ -140,7 +140,7 @@ ins {
 }
 .rock3{
     position: absolute;
-    background-image: url(7.gif);
+    background-image: url(images/7.gif);
     width: 150px;
     height: 150px;
     background-repeat: no-repeat;
@@ -150,7 +150,7 @@ ins {
 }
 .rock4{
     position: absolute;
-    background-image: url(8.gif);
+    background-image: url(images/8.gif);
     width: 150px;
     height: 150px;
     background-repeat: no-repeat;
@@ -160,7 +160,7 @@ ins {
 }
 .p{
     position: absolute;
-    background-image: url(1.gif);
+    background-image: url(images/1.gif);
     width: 150px;
     height: 150px;
     background-repeat: no-repeat;
@@ -211,7 +211,7 @@ ins {
     z-index: -1;
     height: 4vh;
     width: 0.5vh;
-    background-image: url(6.png);
+    background-image: url(images/6.png);
     background-position: center;
     box-shadow: 0 0 1vh rgba(255,255,255,0.7), 
             0 0 2vh rgba(155, 134, 41, 0.7), 
@@ -251,12 +251,12 @@ ins {
 }
 .s{
     position: absolute;
-    top: 1vh;
-    right: 1vh;
+    bottom: 1vh;
+    left: 1vh;
     padding: 2vh;
     color: white;
     font-family: "press start 2p";
-    font-size: 7vh;
+    font-size: 4vh;
 }
 @media (max-width: 768px) {
     .menu .b {
